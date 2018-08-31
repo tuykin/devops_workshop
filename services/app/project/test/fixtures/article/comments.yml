@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  commentor: MyString
+  body: MyText
+  article: published
+
+with_likes:
+  commentor: MyString
+  body: MyText
+  article: published
