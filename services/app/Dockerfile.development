@@ -1,0 +1,3 @@
+FROM ruby
+ENV PROJECT_ROOT /usr/src/app
+WORKDIR $PROJECT_ROOT
