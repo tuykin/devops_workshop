@@ -4,12 +4,16 @@ Organized by [Kirill Mokevnin](https://github.com/mokevnin)
 
 === Links
 - [Prerequisites](https://gist.github.com/mokevnin/d1a941b0a835469b9064ba24d514ffa5)
+- [12 factors](https://12factor.net/)
 - [ToDo list (tutorial)](https://gist.github.com/mokevnin/02f84fa9d35aad2c8277b3dede147155)
 - [Docker hexlet guides](https://guides.hexlet.io/docker/)
 - [Article about DevOps](https://habr.com/company/jugru/blog/421757/)
 - [Docker with rails](https://docs.docker.com/compose/rails/)
 - [Choosing local domain name](https://www.pluralsight.com/blog/software-development/choose-internal-top-level-domain-name)
 - [Recommendend books](https://ru.hexlet.io/pages/recommended-books)
+- [Best practices for writhing Dockerfile #1](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/)
+- [Best practices for writhing Dockerfile #2](https://cloud.google.com/solutions/best-practices-for-building-containers)
+- [Dockerfile linter #3](https://github.com/hadolint/hadolint)
 
 === 2Learn
 - how do nginx and network work?
