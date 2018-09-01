@@ -11,3 +11,6 @@ Organized by [Kirill Mokevnin](https://github.com/mokevnin)
 
 === 2Learn
 - how do nginx and network work?
+
+=== Notes
+- В development-среде не надо ставить зависимостей.
