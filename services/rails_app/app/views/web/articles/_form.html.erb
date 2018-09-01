@@ -1,0 +1,26 @@
+<%= simple_form_for @article do |f| %>
+
+  <p>
+    <%= f.input :title %>
+  </p>
+
+  <p>
+    <%= f.input :text %>
+  </p>
+
+  <h3>Links</h3>
+
+  <div id="links">
+    <%= f.simple_fields_for :links do |link| %>
+      <%= render 'link_fields', f: link %>
+    <% end %>
+    <div class="links">
+      <%= link_to_add_association 'add link', f, :links %>
+    </div>
+  </div>
+
+  <p>
+    <%= f.button :submit %>
+  </p>
+
+<% end %>
