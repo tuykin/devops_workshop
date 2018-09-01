@@ -1,3 +1,10 @@
-FROM ruby
-ENV PROJECT_ROOT /usr/src/app
+FROM ruby:2.5
+
+ENV PROJECT_ROOT /app
+
+RUN mkdir $PROJECT_ROOT
+
+COPY sinatra_project $PROJECT_ROOT
+
 WORKDIR $PROJECT_ROOT
+RUN bundle install
