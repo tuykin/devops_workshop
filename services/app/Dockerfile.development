@@ -1,10 +1,5 @@
 FROM ruby:2.5
 
-ENV PROJECT_ROOT /app
-
-RUN mkdir $PROJECT_ROOT
-
-COPY sinatra_project $PROJECT_ROOT
-
+ENV PROJECT_ROOT /usr/src/app
 WORKDIR $PROJECT_ROOT
-RUN bundle install
+RUN gem install sinatra

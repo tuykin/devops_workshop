@@ -1,7 +1,0 @@
-<h1>Edit article</h1>
-
-<%= render 'form' %>
-
-
-<%= link_to 'Send to moderation', send_to_moderation_article_path(@article), method: :patch if @article.draft? %>
-<%= link_to 'Back', articles_path %>
