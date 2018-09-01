@@ -3,5 +3,9 @@ FROM ruby:2.5
 ENV PROJECT_ROOT /usr/src/app
 WORKDIR $PROJECT_ROOT
 
+ADD Gemfile $PROJECT_ROOT/Gemfile
+ADD Gemfile.lock $PROJECT_ROOT/Gemfile.lock
+RUN bundle install --system
+
 ADD . $PROJECT_ROOT
 RUN bundle install --system
