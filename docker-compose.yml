@@ -7,7 +7,7 @@ services:
       dockerfile: Dockerfile.development
     command: sh -c "ruby app.rb"
     ports:
-      - "4567:4567"
+      - "8080:4567"
     volumes:
       - "~/.bash_history:/.bash_history"
       - "./services/app:/usr/src/app:cached"
