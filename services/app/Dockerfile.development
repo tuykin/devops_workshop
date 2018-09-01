@@ -1,7 +1,7 @@
 FROM ruby:2.5
 
 ENV PROJECT_ROOT /usr/src/app
+ENV BUNDLE_PATH $PROJECT_ROOT/vendor/bundle
+ENV GEM_HOME $PROJECT_ROOT/vendor/bundle
+ENV BUNDLE_JOBS 2
 WORKDIR $PROJECT_ROOT
-RUN gem install sinatra
-RUN gem install rack-test
-RUN gem install rake

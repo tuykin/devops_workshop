@@ -19,7 +19,7 @@ services:
     build:
       context: services/app
       dockerfile: Dockerfile.development
-    command: sh -c "ruby app.rb"
+    command: sh -c "bundle exec ruby app.rb"
     ports:
       - "4567:4567"
     volumes:

@@ -10,4 +10,4 @@ app-bash:
 	docker-compose run --user=$(USER) app bash
 
 app-setup: app-build
-	docker-compose run app bundle install --path vendor/bundle
+	docker-compose run app bundle install
