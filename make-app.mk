@@ -11,6 +11,3 @@ app-bash:
 
 app-setup: development-setup-env app-build
 	docker-compose run app bundle install
-
-development-setup-env:
-	ansible-playbook ansible/development.yml -i ansible/development -vv
