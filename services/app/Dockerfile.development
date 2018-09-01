@@ -3,3 +3,5 @@ FROM ruby:2.5
 ENV PROJECT_ROOT /usr/src/app
 WORKDIR $PROJECT_ROOT
 RUN gem install sinatra
+RUN gem install rack-test
+RUN gem install rake
