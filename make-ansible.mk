@@ -1,4 +1,4 @@
-FILE = "ansible/group_vars/all/vault.yml"
+FILE = "ansible/production/group_vars/all/vault.yml"
 
 ansible-vaults-encrypt:
 	ansible-vault encrypt $(FILE)
