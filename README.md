@@ -12,6 +12,7 @@ Organized by [Kirill Mokevnin](https://github.com/mokevnin)
 
 === 2Learn
 - how do nginx and network work?
+- application composition from scratch. Create ruby-project from scratch, add db, AR, routing, rake, tests, etc. e.g. add all listed above to sinatra.
 
 === Notes
 - В development-среде не надо ставить зависимостей.
