@@ -1,23 +1,28 @@
 version: '3.3'
 
 services:
-  app:
-    depends_on:
-      - nginx
-    build:
-      context: services/app
-      dockerfile: Dockerfile.development
-    command: sh -c "ruby app.rb"
-    ports:
-      - "8081:4567"
-    volumes:
-      - "~/.bash_history:/.bash_history"
-      - "./services/app:/usr/src/app:cached"
-      - "/tmp:/tmp:delegated"
-
   nginx:
     build:
       context: services/nginx
       dockerfile: Dockerfile
     ports:
       - "8080:8080"
+      - "8081:8082" # hots port 8081 is proxied to internal nginx port 8082
+    volumes:
+      # - "./services/nginx/index.html:/etc/nginx/html/index.html"
+      - "./services/nginx/tuykin.ru.conf:/etc/nginx/conf.d/tuykin.ru.conf"
+      - "./services/nginx/test.conf:/etc/nginx/conf.d/test.conf"
+    depends_on:
+      - app
+
+  app:
+    build:
+      context: services/app
+      dockerfile: Dockerfile.development
+    command: sh -c "ruby app.rb"
+    ports:
+      - "4567:4567"
+    volumes:
+      - "~/.bash_history:/.bash_history"
+      - "./services/app:/usr/src/app:cached"
+      - "/tmp:/tmp:delegated"
