@@ -7,15 +7,13 @@ services:
       dockerfile: Dockerfile
     ports:
       - "${NGINX_PORT}:${NGINX_PORT}"
-    env_file: '.env'
     volumes:
-      # - "./services/nginx/index.html:/etc/nginx/html/index.html"
       - "./services/nginx/tuykin.ru.conf:/etc/nginx/conf.d/tuykin.ru.conf"
-      - "./services/nginx/test.conf:/etc/nginx/conf.d/test.conf"
     depends_on:
       - app
 
   app:
+    env_file: '.env'
     build:
       context: services/app
       dockerfile: Dockerfile.development
