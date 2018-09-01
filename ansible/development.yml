@@ -1,0 +1,8 @@
+---
+- hosts: localhost
+  gather_facts: no
+  tasks:
+  - name: Generating ENV vars
+    template:
+      src: templates/environment.j2
+      dest: '../.env'

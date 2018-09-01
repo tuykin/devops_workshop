@@ -6,8 +6,8 @@ services:
       context: services/nginx
       dockerfile: Dockerfile
     ports:
-      - "80:80"
-      - "8081:8082" # hots port 8081 is proxied to internal nginx port 8082
+      - "${NGINX_PORT}:${NGINX_PORT}"
+    env_file: '.env'
     volumes:
       # - "./services/nginx/index.html:/etc/nginx/html/index.html"
       - "./services/nginx/tuykin.ru.conf:/etc/nginx/conf.d/tuykin.ru.conf"
