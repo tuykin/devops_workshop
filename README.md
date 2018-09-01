@@ -9,6 +9,7 @@ Organized by [Kirill Mokevnin](https://github.com/mokevnin)
 - [Article about DevOps](https://habr.com/company/jugru/blog/421757/)
 - [Docker with rails](https://docs.docker.com/compose/rails/)
 - [Choosing local domain name](https://www.pluralsight.com/blog/software-development/choose-internal-top-level-domain-name)
+- [Recommendend books](https://ru.hexlet.io/pages/recommended-books)
 
 === 2Learn
 - how do nginx and network work?
