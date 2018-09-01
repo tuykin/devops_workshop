@@ -1,0 +1,7 @@
+FROM ruby:2.5
+
+ENV PROJECT_ROOT /usr/src/app
+WORKDIR $PROJECT_ROOT
+
+ADD . $PROJECT_ROOT
+RUN bundle install --system
