@@ -1,8 +1,8 @@
----
 version: '2'
-  services:
-    sut:
-      build:
-        context: .
-        dockerfile: Dockerfile.production
-      command: bundle exec rspec
+
+services:
+  sut:
+    build:
+      context: .
+      dockerfile: Dockerfile.production
+    command: bundle exec rspec

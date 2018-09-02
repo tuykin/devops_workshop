@@ -11,3 +11,9 @@ app-bash:
 
 app-setup: development-setup-env app-build
 	docker-compose run app bundle install
+
+app-test:
+	docker-compose run app bundle exec rspec
+
+app-test-sut:
+	docker-compose -f services/app/docker-compose.test.yml run sut
