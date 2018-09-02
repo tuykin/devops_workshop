@@ -1,11 +1,14 @@
 FROM ruby:2.5
-
+RUN apt-get update -qq && apt-get install -y build-essential libpq-dev
 ENV PROJECT_ROOT /usr/src/app
 WORKDIR $PROJECT_ROOT
 
-ADD Gemfile $PROJECT_ROOT/Gemfile
-ADD Gemfile.lock $PROJECT_ROOT/Gemfile.lock
+COPY Gemfile $PROJECT_ROOT
+COPY Gemfile.lock $PROJECT_ROOT
+
 RUN bundle install --system
 
-ADD . $PROJECT_ROOT
+COPY . $PROJECT_ROOT
 RUN bundle install --system
+
+CMD ["bundle", "exec", "ruby", "app.rb"]
