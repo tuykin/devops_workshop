@@ -1,5 +1,3 @@
 ---
 env: production
 docker_install_compose: False
-devops_workshop:
-  env_file: "/root/.env"
