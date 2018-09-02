@@ -8,3 +8,6 @@ ansible-vaults-decrypt:
 
 ansible-vaults-edit:
 	ansible-vault edit $(FILE)
+
+ansible-deps-install:
+	ansible-galaxy install -r requirements.yml

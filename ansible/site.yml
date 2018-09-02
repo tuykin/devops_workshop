@@ -1,0 +1,44 @@
+---
+- hosts: webservers
+
+  pre_tasks:
+    - apt:
+        update_cache: true
+        name: "{{ item }}"
+      with_items:
+        - python3-pip
+        # - python-pip
+      become: true
+
+    - pip:
+        name: docker
+      become: true
+
+    - name: Generating ENV vars
+      template:
+        src: templates/environment.j2
+        dest: '/root/.env'
+
+    - name: Create a network
+      docker_network:
+        name: "{{ devops_workshop.docker_network }}"
+
+  roles:
+    - role: geerlingguy.docker
+      become: true
+
+  post_tasks:
+    # - user:
+    #     name: "{{ hexlet_basics_run_user }}"
+    #     groups: docker
+    #     append: true
+    #   become: true
+
+    # - meta: reset_connection
+
+    # - cron:
+    #     name: "docker system prune"
+    #     minute: "0"
+    #     hour: "3"
+    #     job: "docker system prune -f"
+    #   tags: [cron]

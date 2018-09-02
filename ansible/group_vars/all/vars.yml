@@ -2,3 +2,6 @@
 nginx_port: 80
 app_port: 4567
 app_domain: devops-workshop.test
+ansible_python_interpreter: "/usr/bin/env python3"
+devops_workshop:
+  docker_network: "devops-workshop"
