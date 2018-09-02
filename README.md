@@ -15,7 +15,7 @@ Organized by [Kirill Mokevnin](https://github.com/mokevnin)
 - [Best practices for writhing Dockerfile #2](https://cloud.google.com/solutions/best-practices-for-building-containers)
 - [Dockerfile linter #3](https://github.com/hadolint/hadolint)
 - [About databases in immutable env](https://www.youtube.com/watch?v=TWkkshKU6nQ&t=11400s)
-
+- [Terraformim Selectel](http://vakhov.me/blog/2016/10/13/terraform-like-a-terraformer/index.html)
 
 === Ansible setup example
 - [deploy.yml](https://github.com/hexlet-basics/hexlet_basics/blob/4082255a835972f9fa4c90b062b1696d89833df8/ansible/deploy.yml)
