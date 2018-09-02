@@ -6,6 +6,9 @@ app:
 app-build:
 	docker-compose build
 
+app-production:
+	docker-compose -f docker-compose.yml -f docker-compose.production.yml up
+
 app-bash:
 	docker-compose run --user=$(USER) app bash
 
