@@ -14,20 +14,11 @@
         name: docker
       become: true
 
-    - name: Generating ENV vars
-      template:
-        src: templates/environment.j2
-        dest: '/root/.env'
-
-    - name: Create a network
-      docker_network:
-        name: "{{ devops_workshop.docker_network }}"
-
   roles:
     - role: geerlingguy.docker
       become: true
 
-  post_tasks:
+  # post_tasks:
     # - user:
     #     name: "{{ hexlet_basics_run_user }}"
     #     groups: docker
@@ -35,10 +26,3 @@
     #   become: true
 
     # - meta: reset_connection
-
-    # - cron:
-    #     name: "docker system prune"
-    #     minute: "0"
-    #     hour: "3"
-    #     job: "docker system prune -f"
-    #   tags: [cron]

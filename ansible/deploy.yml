@@ -1,0 +1,54 @@
+---
+- hosts: webservers
+  gather_facts: false
+
+  tasks:
+    - name: Create a network
+      docker_network:
+        name: "{{ devops_workshop.docker_network }}"
+
+    - name: Generating ENV vars
+      template:
+        src: templates/environment.j2
+        dest: "{{ devops_workshop.env_file }}"
+      tags: env
+
+    - name: download app image
+      docker_image:
+        name: "{{ devops_workshop.image_name }}"
+        force: true
+
+    - name: download nginx image
+      docker_image:
+        name: "{{ devops_workshop.nginx_image_name }}"
+        force: true
+
+    - name: start nginx
+      docker_container:
+        recreate: true
+        name: devops-workshop-nginx
+        image: "{{ devops_workshop.nginx_image_name }}"
+        state: started
+        restart_policy: always
+        published_ports:
+          - "80:80"
+        networks:
+          - name: "{{ devops_workshop.docker_network }}"
+      tags: [webserver]
+
+    - name: start application
+      docker_container:
+        recreate: true
+        name: app
+        image: "{{ devops_workshop.image_name }}"
+        state: started
+        restart_policy: always
+        env_file: "{{ devops_workshop.env_file }}"
+        volumes:
+          - "/var/run/docker.sock:/var/run/docker.sock"
+          - "/tmp:/tmp"
+          - "/opt:/opt"
+          - "/var/tmp:/var/tmp"
+        networks:
+          - name: "{{ devops_workshop.docker_network }}"
+      tags: [webserver]

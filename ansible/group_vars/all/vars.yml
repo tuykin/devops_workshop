@@ -5,3 +5,5 @@ app_domain: devops-workshop.test
 ansible_python_interpreter: "/usr/bin/env python3"
 devops_workshop:
   docker_network: "devops-workshop"
+  image_name: "tuykin/workshop-devops-app"
+  nginx_image_name: "tuykin/workshop-devops-nginx"
