@@ -15,19 +15,19 @@
 
     - name: download app image
       docker_image:
-        name: "{{ devops_workshop.image_name }}"
+        name: "{{ devops_workshop.image_name }}:latest"
         force: true
 
     - name: download nginx image
       docker_image:
-        name: "{{ devops_workshop.nginx_image_name }}"
+        name: "{{ devops_workshop.nginx_image_name }}:latest"
         force: true
 
     - name: start nginx
       docker_container:
         recreate: true
         name: devops-workshop-nginx
-        image: "{{ devops_workshop.nginx_image_name }}"
+        image: "{{ devops_workshop.nginx_image_name }}:latest"
         state: started
         restart_policy: always
         published_ports:
@@ -40,7 +40,7 @@
       docker_container:
         recreate: true
         name: app
-        image: "{{ devops_workshop.image_name }}"
+        image: "{{ devops_workshop.image_name }}:latest"
         state: started
         restart_policy: always
         env_file: "{{ devops_workshop.env_file }}"
@@ -49,6 +49,8 @@
           - "/tmp:/tmp"
           - "/opt:/opt"
           - "/var/tmp:/var/tmp"
+        published_ports:
+          - "4567:4567"
         networks:
           - name: "{{ devops_workshop.docker_network }}"
       tags: [webserver]
